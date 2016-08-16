@@ -9,13 +9,22 @@ class Code(object):
     Class encapsulating the concept of code
 
     Attributes:
-        code (list): The ordered array of the code
+        code (list): The ordered array of the code (fixed length of 4)
     """
     def __init__(self, peg1, peg2, peg3, peg4):
         self.code = [None] * 4
         self.set(peg1, peg2, peg3, peg4)
 
     def set(self, peg1, peg2, peg3, peg4):
+        """
+        Mutator method setting the code
+
+        Arguments:
+            peg1 (CodePeg): The first peg of the code
+            peg2 (CodePeg): The second peg of the code
+            peg3 (CodePeg): The third peg of the code
+            peg4 (CodePeg): The fourth peg of the code
+        """
         assert isinstance(peg1, CodePeg), 'The pin1 is not of type CodePeg. Type passed: ' + str(type(peg1))
         assert isinstance(peg2, CodePeg), 'The pin1 is not of type CodePeg. Type passed: ' + str(type(peg2))
         assert isinstance(peg3, CodePeg), 'The pin1 is not of type CodePeg. Type passed: ' + str(type(peg3))
@@ -42,6 +51,15 @@ class SecretCode(Code):
         return cls.__instance
 
     def initialize(self, peg1, peg2, peg3, peg4):
+        """
+        Method initializing the secret code
+
+        Arguments:
+            peg1 (CodePeg): The first peg of the code
+            peg2 (CodePeg): The second peg of the code
+            peg3 (CodePeg): The third peg of the code
+            peg4 (CodePeg): The fourth peg of the code
+        """
         Code.__init__(self, peg1, peg2, peg3, peg4)
 
 
