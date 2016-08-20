@@ -69,3 +69,6 @@ class Attempt(Code):
     """
     def __init__(self, peg1, peg2, peg3, peg4):
         Code.__init__(self, peg1, peg2, peg3, peg4)
+
+    def __str__(self):
+        return '(' + str(self.code[0]) + ',' + str(self.code[1]) + ',' + str(self.code[2]) + ',' + str(self.code[3]) + ')'

@@ -17,3 +17,10 @@ class Feedback(object):
         assert isinstance(black_count, int), 'The black_count is not of type int. Type passed: ' + str(type(black_count))
         assert isinstance(white_count, int), 'The white_count is not of type int. Type passed: ' + str(type(white_count))
         self.black_count, self.white_count = black_count, white_count
+
+    def __ne__(self, other):
+        assert isinstance(other, Feedback)
+        return self.black_count != other.black_count or self.white_count != other.white_count
+
+    def __str__(self):
+        return '(' + str(self.black_count) + ',' + str(self.white_count) + ')'
